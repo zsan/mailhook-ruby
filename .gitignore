@@ -1,0 +1,35 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/vendor/bundle/
+
+# Gem files
+*.gem
+Gemfile.lock
+
+# IDE
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# Test artifacts
+/spec/examples.txt
+/spec/fixtures/vcr_cassettes/*.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Debug
+*.log
