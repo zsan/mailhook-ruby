@@ -1,6 +1,12 @@
 # Mailhook Ruby
 
+> **Beta Notice:** This gem is currently in beta (v0.0.1). API may change in future releases.
+
 Ruby client library for the [Mailhook API](https://mailhook.dev).
+
+## Requirements
+
+- Ruby >= 3.0
 
 ## Installation
 
@@ -304,6 +310,32 @@ bundle exec rubocop
 bundle exec rake
 ```
 
+## Architecture
+
+For detailed information about the internal architecture, see [ARCHITECTURE.md](ARCHITECTURE.md).
+
+This documentation is designed for both human developers and AI agents to understand:
+- Directory structure and file responsibilities
+- Request/response flow
+- How to add new endpoints
+- Error handling patterns
+- Testing patterns
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Write tests for your changes
+4. Ensure all tests pass (`bundle exec rspec`)
+5. Ensure code style is correct (`bundle exec rubocop`)
+6. Commit your changes (`git commit -am 'Add my feature'`)
+7. Push to the branch (`git push origin feature/my-feature`)
+8. Create a Pull Request
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](LICENSE.txt).
+
+## Author
+
+- **Zakarias** - [zaksantanu@gmail.com](mailto:zaksantanu@gmail.com)
