@@ -11,21 +11,18 @@ module Mailhook
     # @example Mark email as read
     #   client.inbound_emails.mark_read("456")
     class InboundEmails < Resource
-      # List inbound emails
-      # @param email_address_id [String, Integer, nil] Filter by email address
-      # @param domain_id [String, Integer, nil] Filter by domain
-      # @param read [Boolean, nil] Filter by read status
+      # List inbound emails for an email address
+      # @param email_address_id [String, Integer] Email address ID (required)
+      # @param unread [Boolean, nil] Filter by unread status
       # @param page [Integer, nil] Page number
       # @param per_page [Integer, nil] Items per page
       # @return [Response] List of inbound emails
-      def list(email_address_id: nil, domain_id: nil, read: nil, page: nil, per_page: nil)
-        get("inbound_emails", clean_params({
-                                             email_address_id: email_address_id,
-                                             domain_id: domain_id,
-                                             read: read,
-                                             page: page,
-                                             per_page: per_page
-                                           }))
+      def list(email_address_id:, unread: nil, page: nil, per_page: nil)
+        get("email_addresses/#{email_address_id}/inbound_emails", clean_params({
+                                                                                 unread: unread,
+                                                                                 page: page,
+                                                                                 per_page: per_page
+                                                                               }))
       end
 
       # Retrieve an inbound email by ID

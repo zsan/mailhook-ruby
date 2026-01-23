@@ -6,7 +6,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "#list" do
     before do
-      stub_request(:get, "https://app.mailhook.co/api/v1/inbound_emails")
+      stub_request(:get, "https://app.mailhook.co/api/v1/email_addresses/ea_123/inbound_emails")
         .to_return(
           status: 200,
           body: {
@@ -18,18 +18,18 @@ RSpec.describe Mailhook::Resources::InboundEmails do
         )
     end
 
-    it "lists inbound emails" do
-      response = inbound_emails.list
+    it "lists inbound emails for an email address" do
+      response = inbound_emails.list(email_address_id: "ea_123")
 
       expect(response.count).to eq(1)
       expect(response.first["subject"]).to eq("Test Email")
     end
   end
 
-  describe "#list with filters" do
+  describe "#list with unread filter" do
     before do
-      stub_request(:get, "https://app.mailhook.co/api/v1/inbound_emails")
-        .with(query: { email_address_id: "123", read: "false" })
+      stub_request(:get, "https://app.mailhook.co/api/v1/email_addresses/ea_123/inbound_emails")
+        .with(query: { unread: "true" })
         .to_return(
           status: 200,
           body: { data: [] }.to_json,
@@ -37,8 +37,8 @@ RSpec.describe Mailhook::Resources::InboundEmails do
         )
     end
 
-    it "filters by email_address_id and read status" do
-      response = inbound_emails.list(email_address_id: "123", read: false)
+    it "filters by unread status" do
+      response = inbound_emails.list(email_address_id: "ea_123", unread: true)
 
       expect(response.count).to eq(0)
     end

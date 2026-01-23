@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2026-01-23
+
+### Fixed
+- Fix `inbound_emails.list` endpoint to use `/email_addresses/:id/inbound_emails`
+
+### Added
+- `list_email_addresses.rb` example
+- `delete_email_address.rb` example
+
 ## [0.0.4] - 2026-01-23
 
 ### Fixed
