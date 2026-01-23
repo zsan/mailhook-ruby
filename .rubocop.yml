@@ -1,6 +1,9 @@
 require:
   - rubocop-rspec
 
+plugins:
+  - rubocop-capybara
+
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
@@ -49,3 +52,7 @@ RSpec/IdenticalEqualityAssertion:
 
 Metrics/ParameterLists:
   Max: 6
+
+# Disable Capybara cops (not used in this project)
+Capybara:
+  Enabled: false
