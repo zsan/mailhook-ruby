@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2026-01-23
+
+### Fixed
+- Fix `domains.create` to use correct API format (`domain_type` + `tailme_slug`)
+- Update examples to handle JSON:API response format with `attributes`
+
+### Added
+- Split examples into separate scripts:
+  - `list_domains.rb` - List all domains
+  - `create_domain.rb` - Create a new shared domain
+  - `create_random_email.rb` - Create a random email address
+  - `list_inbound_emails.rb` - List received emails
+  - `retrieve_email_detail.rb` - Get full email content
+- Save `docs/llms.txt` for LLM reference
+
 ## [0.0.3] - 2026-01-23
 
 ### Fixed

@@ -12,11 +12,11 @@ module Mailhook
     #   domains = client.domains.list
     #   domains.each { |d| puts d["domain"] }
     class Domains < Resource
-      # Create a new domain
+      # Create a new shared domain (tail.me subdomain)
       # @param slug [String] The subdomain slug (e.g., "mycompany" creates "mycompany.tail.me")
       # @return [Response] Created domain details
       def create(slug:)
-        post("domains", { slug: slug })
+        post("domains", { domain_type: "shared", tailme_slug: slug })
       end
 
       # List all domains

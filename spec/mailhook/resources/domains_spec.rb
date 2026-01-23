@@ -7,7 +7,7 @@ RSpec.describe Mailhook::Resources::Domains do
   describe "#create" do
     before do
       stub_request(:post, "https://app.mailhook.co/api/v1/domains")
-        .with(body: { slug: "mycompany" }.to_json)
+        .with(body: { domain_type: "shared", tailme_slug: "mycompany" }.to_json)
         .to_return(
           status: 201,
           body: { id: "1", domain: "mycompany.tail.me", slug: "mycompany" }.to_json,
