@@ -6,7 +6,7 @@ RSpec.describe Mailhook::Resources::EmailAddresses do
 
   describe "#create" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/email_addresses")
+      stub_request(:post, "https://app.mailhook.co/api/v1/email_addresses")
         .with(body: { domain_id: "5", local_part: "support" }.to_json)
         .to_return(
           status: 201,
@@ -25,7 +25,7 @@ RSpec.describe Mailhook::Resources::EmailAddresses do
 
   describe "#create_random" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/email_addresses/random")
+      stub_request(:post, "https://app.mailhook.co/api/v1/email_addresses/random")
         .with(body: { domain_id: "5" }.to_json)
         .to_return(
           status: 201,
@@ -44,7 +44,7 @@ RSpec.describe Mailhook::Resources::EmailAddresses do
 
   describe "#list" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/email_addresses")
+      stub_request(:get, "https://app.mailhook.co/api/v1/email_addresses")
         .to_return(
           status: 200,
           body: { data: [{ id: "1", address: "test@example.tail.me" }] }.to_json,
@@ -62,7 +62,7 @@ RSpec.describe Mailhook::Resources::EmailAddresses do
 
   describe "#retrieve" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/email_addresses/1")
+      stub_request(:get, "https://app.mailhook.co/api/v1/email_addresses/1")
         .to_return(
           status: 200,
           body: { id: "1", address: "test@example.tail.me" }.to_json,
@@ -79,7 +79,7 @@ RSpec.describe Mailhook::Resources::EmailAddresses do
 
   describe "#delete" do
     before do
-      stub_request(:delete, "https://api.mailhook.co/api/v1/email_addresses/1")
+      stub_request(:delete, "https://app.mailhook.co/api/v1/email_addresses/1")
         .to_return(
           status: 200,
           body: { message: "Email address deleted" }.to_json,
@@ -96,7 +96,7 @@ RSpec.describe Mailhook::Resources::EmailAddresses do
 
   describe "#batch_create" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/email_addresses/batch")
+      stub_request(:post, "https://app.mailhook.co/api/v1/email_addresses/batch")
         .with(body: { email_addresses: [{ domain_id: "5", local_part: "test1" }] }.to_json)
         .to_return(
           status: 201,

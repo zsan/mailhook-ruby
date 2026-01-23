@@ -6,7 +6,7 @@ RSpec.describe Mailhook::Resources::OutboundEmails do
 
   describe "#send" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/outbound_emails")
+      stub_request(:post, "https://app.mailhook.co/api/v1/outbound_emails")
         .with(body: {
           from_email_address_id: "123",
           to: "recipient@example.com",
@@ -35,7 +35,7 @@ RSpec.describe Mailhook::Resources::OutboundEmails do
 
   describe "#send with html_body" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/outbound_emails")
+      stub_request(:post, "https://app.mailhook.co/api/v1/outbound_emails")
         .with(body: {
           from_email_address_id: "123",
           to: "recipient@example.com",
@@ -65,7 +65,7 @@ RSpec.describe Mailhook::Resources::OutboundEmails do
 
   describe "#retrieve" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/outbound_emails/1")
+      stub_request(:get, "https://app.mailhook.co/api/v1/outbound_emails/1")
         .to_return(
           status: 200,
           body: { id: "1", status: "delivered", to: "recipient@example.com" }.to_json,
@@ -83,7 +83,7 @@ RSpec.describe Mailhook::Resources::OutboundEmails do
 
   describe "#list" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/outbound_emails")
+      stub_request(:get, "https://app.mailhook.co/api/v1/outbound_emails")
         .to_return(
           status: 200,
           body: { data: [{ id: "1", status: "delivered" }] }.to_json,

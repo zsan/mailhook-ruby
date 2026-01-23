@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2026-01-23
+
+### Fixed
+- Fix API subdomain from `api.mailhook.co` to `app.mailhook.co`
+
 ## [0.0.2] - 2026-01-23
 
 ### Fixed

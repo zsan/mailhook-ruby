@@ -6,7 +6,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "#list" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/inbound_emails")
+      stub_request(:get, "https://app.mailhook.co/api/v1/inbound_emails")
         .to_return(
           status: 200,
           body: {
@@ -28,7 +28,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "#list with filters" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/inbound_emails")
+      stub_request(:get, "https://app.mailhook.co/api/v1/inbound_emails")
         .with(query: { email_address_id: "123", read: "false" })
         .to_return(
           status: 200,
@@ -46,7 +46,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "#retrieve" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/inbound_emails/1")
+      stub_request(:get, "https://app.mailhook.co/api/v1/inbound_emails/1")
         .to_return(
           status: 200,
           body: {
@@ -69,7 +69,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "#mark_read" do
     before do
-      stub_request(:patch, "https://api.mailhook.co/api/v1/inbound_emails/1/read")
+      stub_request(:patch, "https://app.mailhook.co/api/v1/inbound_emails/1/read")
         .to_return(
           status: 200,
           body: { id: "1", read: true }.to_json,
@@ -86,7 +86,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "#batch_mark_read" do
     before do
-      stub_request(:patch, "https://api.mailhook.co/api/v1/inbound_emails/batch/read")
+      stub_request(:patch, "https://app.mailhook.co/api/v1/inbound_emails/batch/read")
         .with(body: { ids: %w[1 2 3] }.to_json)
         .to_return(
           status: 200,
@@ -104,7 +104,7 @@ RSpec.describe Mailhook::Resources::InboundEmails do
 
   describe "error handling" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/inbound_emails/999")
+      stub_request(:get, "https://app.mailhook.co/api/v1/inbound_emails/999")
         .to_return(
           status: 404,
           body: { error: "Email not found" }.to_json,

@@ -59,7 +59,7 @@ Connection#handle_response
 Stores global settings. Key attributes:
 - `agent_id` - Authentication header X-Agent-ID
 - `api_key` - Authentication header X-API-Key
-- `base_url` - API endpoint (default: `https://api.mailhook.co/api/v1`)
+- `base_url` - API endpoint (default: `https://app.mailhook.co/api/v1`)
 - `timeout` - Request timeout in seconds
 - `max_retries` - Retry count for failed requests
 
@@ -201,7 +201,7 @@ Tests use WebMock to stub HTTP requests:
 
 ```ruby
 before do
-  stub_request(:get, "https://api.mailhook.co/api/v1/agents/me")
+  stub_request(:get, "https://app.mailhook.co/api/v1/agents/me")
     .to_return(
       status: 200,
       body: { id: "123", name: "Test" }.to_json,

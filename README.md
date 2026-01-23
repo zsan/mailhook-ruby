@@ -58,7 +58,7 @@ client = Mailhook::Client.new(
 |--------|---------|-------------|
 | `agent_id` | `nil` | Your Mailhook Agent ID |
 | `api_key` | `nil` | Your Mailhook API Key |
-| `base_url` | `https://api.mailhook.co/api/v1` | API base URL |
+| `base_url` | `https://app.mailhook.co/api/v1` | API base URL |
 | `timeout` | `30` | Request timeout in seconds |
 | `open_timeout` | `10` | Connection timeout in seconds |
 | `max_retries` | `2` | Maximum retry attempts |

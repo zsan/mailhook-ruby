@@ -34,7 +34,7 @@ module Mailhook
     # @return [Array<Integer>] HTTP status codes that should trigger a retry
     attr_accessor :retry_statuses
 
-    DEFAULT_BASE_URL = "https://api.mailhook.co/api/v1"
+    DEFAULT_BASE_URL = "https://app.mailhook.co/api/v1"
     DEFAULT_TIMEOUT = 30
     DEFAULT_OPEN_TIMEOUT = 10
     DEFAULT_MAX_RETRIES = 2

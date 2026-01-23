@@ -6,7 +6,7 @@ RSpec.describe Mailhook::Resources::Agents do
 
   describe "#register" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/agents/register")
+      stub_request(:post, "https://app.mailhook.co/api/v1/agents/register")
         .with(body: { name: "My Agent" }.to_json)
         .to_return(
           status: 201,
@@ -25,7 +25,7 @@ RSpec.describe Mailhook::Resources::Agents do
 
   describe "#me" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/agents/me")
+      stub_request(:get, "https://app.mailhook.co/api/v1/agents/me")
         .to_return(
           status: 200,
           body: { id: "test_agent", name: "Test Agent", plan: "free" }.to_json,
@@ -44,7 +44,7 @@ RSpec.describe Mailhook::Resources::Agents do
 
   describe "#upgrade" do
     before do
-      stub_request(:post, "https://api.mailhook.co/api/v1/agents/upgrade")
+      stub_request(:post, "https://app.mailhook.co/api/v1/agents/upgrade")
         .to_return(
           status: 200,
           body: { checkout_url: "https://checkout.stripe.com/..." }.to_json,
@@ -61,7 +61,7 @@ RSpec.describe Mailhook::Resources::Agents do
 
   describe "#upgrade_status" do
     before do
-      stub_request(:get, "https://api.mailhook.co/api/v1/agents/upgrade/status")
+      stub_request(:get, "https://app.mailhook.co/api/v1/agents/upgrade/status")
         .to_return(
           status: 200,
           body: { plan: "pro", status: "active" }.to_json,
@@ -79,7 +79,7 @@ RSpec.describe Mailhook::Resources::Agents do
 
   describe "#deactivate" do
     before do
-      stub_request(:delete, "https://api.mailhook.co/api/v1/agents/me")
+      stub_request(:delete, "https://app.mailhook.co/api/v1/agents/me")
         .to_return(
           status: 200,
           body: { message: "Agent deactivated" }.to_json,
