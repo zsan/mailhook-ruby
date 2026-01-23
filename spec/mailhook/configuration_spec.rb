@@ -5,7 +5,7 @@ RSpec.describe Mailhook::Configuration do
 
   describe "defaults" do
     it "has default base_url" do
-      expect(config.base_url).to eq("https://api.mailhook.dev/api/v1")
+      expect(config.base_url).to eq("https://api.mailhook.co/api/v1")
     end
 
     it "has default timeout" do
@@ -76,7 +76,7 @@ RSpec.describe Mailhook::Configuration do
 
       expect(config.agent_id).to be_nil
       expect(config.api_key).to be_nil
-      expect(config.base_url).to eq("https://api.mailhook.dev/api/v1")
+      expect(config.base_url).to eq("https://api.mailhook.co/api/v1")
       expect(config.timeout).to eq(30)
     end
   end

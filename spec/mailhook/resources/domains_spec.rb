@@ -6,7 +6,7 @@ RSpec.describe Mailhook::Resources::Domains do
 
   describe "#create" do
     before do
-      stub_request(:post, "https://api.mailhook.dev/api/v1/domains")
+      stub_request(:post, "https://api.mailhook.co/api/v1/domains")
         .with(body: { slug: "mycompany" }.to_json)
         .to_return(
           status: 201,
@@ -25,7 +25,7 @@ RSpec.describe Mailhook::Resources::Domains do
 
   describe "#list" do
     before do
-      stub_request(:get, "https://api.mailhook.dev/api/v1/domains")
+      stub_request(:get, "https://api.mailhook.co/api/v1/domains")
         .to_return(
           status: 200,
           body: { data: [{ id: "1", domain: "test.tail.me" }] }.to_json,
@@ -43,7 +43,7 @@ RSpec.describe Mailhook::Resources::Domains do
 
   describe "#retrieve" do
     before do
-      stub_request(:get, "https://api.mailhook.dev/api/v1/domains/1")
+      stub_request(:get, "https://api.mailhook.co/api/v1/domains/1")
         .to_return(
           status: 200,
           body: { id: "1", domain: "test.tail.me" }.to_json,
@@ -61,7 +61,7 @@ RSpec.describe Mailhook::Resources::Domains do
 
   describe "#delete" do
     before do
-      stub_request(:delete, "https://api.mailhook.dev/api/v1/domains/1")
+      stub_request(:delete, "https://api.mailhook.co/api/v1/domains/1")
         .to_return(
           status: 200,
           body: { message: "Domain deleted" }.to_json,
@@ -78,7 +78,7 @@ RSpec.describe Mailhook::Resources::Domains do
 
   describe "#check_slug" do
     before do
-      stub_request(:get, "https://api.mailhook.dev/api/v1/domains/check_slug")
+      stub_request(:get, "https://api.mailhook.co/api/v1/domains/check_slug")
         .with(query: { slug: "available" })
         .to_return(
           status: 200,

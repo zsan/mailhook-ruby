@@ -2,7 +2,7 @@
 
 > **Beta Notice:** This gem is currently in beta (v0.0.1). API may change in future releases.
 
-Ruby client library for the [Mailhook API](https://mailhook.dev).
+Ruby client library for the [Mailhook API](https://mailhook.co).
 
 ## Requirements
 
@@ -58,7 +58,7 @@ client = Mailhook::Client.new(
 |--------|---------|-------------|
 | `agent_id` | `nil` | Your Mailhook Agent ID |
 | `api_key` | `nil` | Your Mailhook API Key |
-| `base_url` | `https://api.mailhook.dev/api/v1` | API base URL |
+| `base_url` | `https://api.mailhook.co/api/v1` | API base URL |
 | `timeout` | `30` | Request timeout in seconds |
 | `open_timeout` | `10` | Connection timeout in seconds |
 | `max_retries` | `2` | Maximum retry attempts |
